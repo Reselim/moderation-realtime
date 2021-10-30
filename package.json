@@ -1,13 +1,13 @@
 {
-  "name": "moderation-realtime",
-  "version": "1.0.0",
-  "main": "main.ts",
-  "license": "AGPL-3.0",
-  "scripts": {
-    "dev": "ts-node . -v",
-    "start": "ts-node .",
-    "check": "tsc --noEmit"
-  },
+	"name": "moderation-realtime",
+	"version": "1.0.0",
+	"main": "main.ts",
+	"license": "AGPL-3.0",
+	"scripts": {
+		"dev": "ts-node . -v | pino-pretty",
+		"start": "ts-node .",
+		"check": "tsc --noEmit"
+	},
 	"dependencies": {
 		"@types/ioredis": "^4.27.8",
 		"@types/jsonwebtoken": "^8.5.5",
@@ -21,5 +21,8 @@
 		"ts-node": "^10.4.0",
 		"typescript": "^4.4.4",
 		"yargs": "^17.2.1"
+	},
+	"devDependencies": {
+		"pino-pretty": "^7.1.0"
 	}
 }
