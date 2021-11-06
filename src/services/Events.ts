@@ -18,7 +18,7 @@ class Events implements Service {
 		app.subscriber.on("message", (event: string, data: any) => {
 			if (events.includes(event)) {
 				const parsedData = JSON.parse(data)
-				app.socket.send(event, parsedData)
+				app.socket.emit(event, parsedData)
 			}
 		})
 
