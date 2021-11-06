@@ -5,6 +5,8 @@ import log from "../util/log"
 const events = [
 	"reportCreate",
 	"reportDelete",
+	"actionCreate",
+	"actionDelete",
 ]
 
 class Events implements Service {
