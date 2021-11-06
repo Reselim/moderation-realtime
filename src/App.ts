@@ -18,7 +18,7 @@ class App {
 			serveClient: false,
 		})
 
-		this.publisher = new IORedis(env.redisUrl, {  })
+		this.publisher = new IORedis(env.redisUrl)
 		this.subscriber = new IORedis(env.redisUrl)
 
 		this.publisher.on("connect", () => log.debug("Publisher connected to Redis"))
