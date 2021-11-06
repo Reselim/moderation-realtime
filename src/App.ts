@@ -1,6 +1,6 @@
 import IORedis, { Redis } from "ioredis"
 import { Server } from "socket.io"
-import Reports from "./services/Reports"
+import Events from "./services/Events"
 import env from "./util/option/env"
 import log from "./util/log"
 
@@ -10,7 +10,7 @@ class App {
 	public publisher: Redis
 	public subscriber: Redis
 
-	public reports: Reports
+	public events: Events
 
 	constructor() {
 		this.socket = new Server({
@@ -24,7 +24,7 @@ class App {
 		this.publisher.on("connect", () => log.debug("Publisher connected to Redis"))
 		this.subscriber.on("connect", () => log.debug("Subscriber connected to Redis"))
 
-		this.reports = new Reports(this)
+		this.events = new Events(this)
 	}
 
 	public async start(): Promise<void> {

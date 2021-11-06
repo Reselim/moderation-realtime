@@ -7,7 +7,7 @@ const events = [
 	"reportDelete",
 ]
 
-class Reports implements Service {
+class Events implements Service {
 	public app: App
 
 	constructor(app: App) {
@@ -24,4 +24,4 @@ class Reports implements Service {
 	}
 }
 
-export default Reports
+export default Events
